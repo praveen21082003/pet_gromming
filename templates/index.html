@@ -1,0 +1,117 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'CSS/index.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <script src="{% static 'js/script.js' %}"></script>
+    </head>
+    <body>
+        <header class="header">
+            <div class="navbar">
+                <div class="img"><img src="{% static 'images/logo.png' %}" alt="prop" class="logoimg"/></div>
+                <div class="menu">
+                    <b><a class="menu-style {% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Home</a></b>
+                    <b><a class="menu-style">Services</a></b>
+                    <b><a class="menu-style">Pet Shop</a></b>
+                    <b><a class="menu-style">About Us</a></b>
+                    <b><a class="menu-style">000-656583</a></b>
+                    <div>
+                        {% if user.is_authenticated %}
+                            <b><span class="username">Welcome..!😊, {{ user.first_name }}</span></b>
+                            <button class="button" onclick="window.location.href='{% url 'logout' %}';">Logout</button>
+                        {% else %}
+                            <button class="button" onclick="window.location.href='{% url 'login' %}';">Login</button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="title">
+                <div>
+                    <p class="title-text">Home</p>
+                </div>
+                <div >
+                    <img src="{% static 'images/home.png' %}" class="imge"/>
+                </div>
+            </div>
+        </header>
+        <div class="headnav">
+            <div class="nav2">
+                <img src="https://i.pinimg.com/736x/3f/bd/2a/3fbd2a15406015b5a0e401445e9c7393.jpg" alt="img" />
+            </div>
+            <div class="nav1">
+                <h3 class="font">Pamper your pet with love and care</h3>
+                <h2 class="font2">Because a happy pet is a healthy pet!</h2>
+                <h3 class="font">Let me know if you need more! 😊🐾</h3>
+            </div>
+        </div>
+        <div class="container">
+            <div class="navcontainer">
+                <img class="navimg" src="https://i.pinimg.com/736x/10/07/c9/1007c9c3a52c6a98f5c4ad5514fda00b.jpg" alt="photo"/>
+                <h4 class="text">ROCKSTAR TREATMENT FOR YOUR PET</h4>
+                <p class="text2">Give your pet the VIP experience they deserve with top-notch care, style, and love! 🐾✨</p>
+              <div class="plus"><b><p class="small">🍣</p></b></div>
+            </div>
+            <div class="navcontainer">
+                <img class="navimg" src="https://i.pinimg.com/736x/dc/d4/62/dcd462a0aa9cc2e0fe6a40e2944014a2.jpg" alt="photo"/>
+                <h4 class="text">GENTLE CARE FOR YOUR BEST FRIEND</h4>
+                <p class="text2">Providing loving and gentle care to keep your furry best friend 🐶🐱 happy, healthy, and pampered! ✨💖</p>
+              <div class="plus"><b><p class="small">🍖</p></b></div>
+            </div>
+            <div class="navcontainer">
+                <img class="navimg" src="https://i.pinimg.com/736x/17/77/63/1777634277a973722b87b5467b7825d3.jpg" alt="photo"/>
+                <h4 class="text">FIRST CLASS CARE FOR THE PAMPERED PET</h4>
+                <p class="text2">Luxurious care for your pampered pet, because they deserve nothing but the best! 🐶🐱💖</p>
+              <div class="plus"><b><p class="small">🦴</p></b></div>
+            </div>
+        </div>
+        <div class="mainhead">
+            <div>
+            <img src="https://i.pinimg.com/736x/bd/a9/e1/bda9e1d57bf821cb71d333e96f15bd55.jpg" alt="photo" class="image"/>
+            </div>
+            <div class="mar">
+            <h1>YOUR DOG COMES FIRST</h1>
+            <p>Your dog’s happiness is our priority, with gentle care and top-notch services. From tail wags to happy paws, we put your pup first every step of the way!</p>
+            <p>Your dog’s happiness comes first, with love, care, and premium grooming</p>
+            </div>
+        </div>
+        <div class="mainhead">
+            <div class="mar">
+                <h1>GROOOMING IS OUR MIDDLE NAME</h1>
+                <p> At our pet spa, grooming isn't just a service – it’s our passion! ✂️✨ We ensure every furry friend gets the care and style they deserve. 🐶💕</p>
+                <p>🐕✂️ Grooming is what we do best – with love, style, and expert care! 💖</p>
+            </div>
+            <div>
+                <img src="https://i.pinimg.com/736x/a6/a8/f0/a6a8f041ad9ac247dec93df22d676ced.jpg" alt="photo" class="image1"/>
+            </div>
+        </div>
+
+
+        <footer class="footer">
+            <div>
+                <h2 class="footerfont">PET SPOT</h2>
+                <p class="footerfont">🐾 PetSpot isn't just a brand; it’s a promise of premium care, love, and comfort for your furry companions. 🐶🐱 From grooming to wellness, we ensure every pet gets the best treatment they deserve! 💕✨</p>
+                <p  class="footerfont"><FaFacebook /> <IoLogoWhatsapp /> <FaXTwitter /> <FaLinkedin /></p>
+            </div>
+            <div>
+                <h2 class="footerfont">INFORMATION</h2>
+                <p class="footerfont">PetSpot is dedicated to providing top-quality grooming and wellness services for pets, ensuring they look and feel their best. 🐶✨ With expert care and a passion for animals, we create a stress-free and enjoyable experience for every furry friend! 🛁💕</p>
+            </div>
+            <div>
+                <h2 class="footerfont">SUBSCRIBE TO OUR NEWSLETTER</h2>
+                <input  class="input" type="text" placeholder="Enter your Name"/>
+                <input class="input" type="email" placeholder="Enter your email address"/>
+
+                <button class="Button">SUBSCRIBE</button>
+            </div>
+        </footer>
+                <div class="copyright">
+                    <p class="mari  "> <i class="fa-solid fa-copyright"></i> Copy Right 2025</p>
+                </div>
+
+    </body>
+</html>

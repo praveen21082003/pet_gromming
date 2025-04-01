@@ -1,0 +1,106 @@
+
+body{
+    justify-items: center;
+    margin-top: 30px;
+}
+
+.sin{
+    color: white;
+
+}
+
+
+.logincon{
+    height: 500px;
+    width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(128, 0, 255, 0.8),
+                0 0 20px rgba(128, 0, 255, 0.6),
+                0 0 30px rgba(128, 0, 255, 0.4);
+    border: solid 2px #ecbaba;
+    background: #0d0d0d;
+    display: flex;
+}
+.sen{
+    margin: 0px;
+    border-radius: 10px 0px 0px 10px;
+    text-align: center;
+    width: 58%;
+    background-color:rgba(128, 0, 255, 0.253);
+}
+
+.text1{
+    margin: 20px;
+    color: white;
+    font-size: 40px;
+}
+.text{
+    margin: 20px;
+    color: white;
+    font-size: 35px;
+}
+.input{
+    display: block;
+    border: none;
+    background-color: transparent;
+    border-bottom: solid 2px #ecbaba;
+    margin-top: 40px;
+    height: 30px;
+    width: 300px;
+    font-size: 15px;
+    color: white;
+    outline: none;
+    animation-timing-function: calc(0.4s + 1.5s);
+}
+.input:hover{
+    border: none;
+    background-color: transparent;
+    border-bottom: solid 2px #ecbaba;
+}
+.input:focus{
+    border: none;
+    background-color: transparent;
+    border-bottom: solid 2px #ecbaba;
+}
+.input::placeholder{
+    color: white;
+}
+
+.input::selection{
+    border: none;
+}
+.input:-webkit-autofill{
+    background-color: transparent;
+    border: none;
+}
+.input:-webkit-autofill:focus{
+    background-color: transparent;
+    border: none;
+}
+
+.form{
+    margin-left: 40px;
+    margin-top: 70px;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.loginbtn{
+    background-color: yellowgreen;
+    border: none;
+    height: 30px;
+    width: 200px;
+    border-radius: 50px;
+    margin-top: 50px;
+}
+
+
+.family{
+    margin-top: 20px;
+    height: 200px;
+    width: 450px;
+}
+.signup{
+    margin-top: 20px;
+}

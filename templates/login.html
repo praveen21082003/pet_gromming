@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'CSS/login.css' %}">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+        });
+    </script>
+</head>
+<body>
+    <div class="logincon">
+            <b class="sen"><p class="text1">Glad to see you! 👋</p><p  class="text">Fetch the best care for your pet</p><p class="text">log in now!</p><p  class="text">let’s make great things happen.</p>
+                <img src="{% static 'images/family.png' %}" alt="pets" class="family">
+            </b>
+            
+
+            <form method="POST" class="form" action="{% url 'login' %}">
+                <h1 class="sin">Sign in</h1>
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Enter username" id="username" class="input" required>
+                <input type="password" name="pwd" placeholder="Enter password" id="password" class="input" required>
+                
+                <button type="submit" class="loginbtn">Login</button>
+
+                <p class="signup">New User? <a href="{% url 'register' %}">Sign up</a></p>
+            </form>
+    </div>
+        
+</body>

@@ -1,0 +1,227 @@
+body{
+    margin: 0px;
+}
+.logoimg{
+    height: 170px;
+    width: 100px;
+    margin-left: 50px;
+    transform: scale(2);
+}
+
+
+.header{
+    height: 500px;
+    width: 100%;
+    background-color: lightpink;
+
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+}
+.menu-style {
+    text-decoration: none; /* Removes underline */
+    color: black; /* Sets text color to black */
+    font-weight: bold;
+    transition: 0.3s;
+    margin-left: 50px;
+    font-size: larger;
+}
+
+.menu-style:hover {
+    color: rgb(219, 104, 10); /* Changes color when hovered */
+}
+
+
+.title{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100px;
+    margin-right: 200px;
+    
+}
+
+.title-text{
+    
+    font-weight: bold;
+    margin-left: 50px;
+    font-family: Copperplate, Papyrus, fantasy ,serif;
+    font-size: 5rem;  /* Adjust size as needed */
+    font-weight: 700;
+    color: #ff7f50; /* Orange shade similar to the image */
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+.imge{
+    width: 330px;
+    height: 300px;
+    animation: floatAnimation 1.5s infinite alternate ease-in-out; 
+     
+}
+@keyframes floatAnimation {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+.button{
+    border: none;
+    height: 30px;
+    width: 60px;
+    margin-left: 10px;
+    border-radius: 20px;
+    background-color: #D63384;
+    color: #FFFFFF;
+}
+.username{
+    margin-left: 90px;
+    height: 30px;
+    width: 170px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+
+
+/* hedwr down */
+.headnav{
+    height: 380px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.nav1{
+    margin: 80px;
+}
+.nav2{
+    margin-right: 90px;
+}
+.font{
+    font-size: 30px;
+}
+.font2{
+    font-size: 40px;
+}
+.navimg{
+    height: 150px;
+    width: auto;
+}
+.text{
+    margin: 20px;
+}
+.text2{
+    margin: 30px;
+}
+
+
+.navcontainer{
+    margin:70px ;
+    height: 360px;
+    width: 250px;
+    justify-content: center;
+    border-radius: 10px;
+    border: solid 1px #ecbaba;
+    text-align: center;
+    background-color: white;
+    box-shadow: 7px 7px 15px gray;
+  }
+  .container{
+    display: flex;
+    justify-content: space-around;
+    background-color: lightblue;
+    margin-top: 20px;
+  }
+  
+  .plus{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 0, 0.932);
+    margin-left: 102px;
+    box-shadow: 7px 7px 15px gray;
+    font-style:initial;
+}
+  
+.small{
+    font-size: 40px;
+  }
+
+
+
+  /* main */
+
+.mainhead{
+    display: flex;
+    text-align: center;
+}
+.mar{
+    margin-top: 120px;
+}
+.image{
+    height: 400px;
+    width: 640px;
+}
+
+.image1{
+    height: 400px;
+    width: 660px;
+}
+
+/* footer */
+
+.footer{
+    height: 300px;
+    width: 100%;
+    display: flex;
+    background-color: rgb(4, 4, 43);
+    
+
+}
+.copyright{
+    text-align: center;
+    height: 50px;
+    width: 100%;
+    background-color: rgb(4, 4, 43);
+
+    color: aliceblue;
+
+}
+.mari{
+    margin-top: 0px;
+}
+.footerfont{
+    margin: 30px;
+    margin-left: 90px;
+    margin-right: 90px;
+    color: aliceblue;
+}
+.Button{
+    margin-top: 10px;
+    margin-left: 90px;
+    background-color: yellow;
+    border: none;
+    height: 30px;
+    width: 100px;
+
+}
+.input{
+    margin-top: 5px;
+    margin-left: 90px;
+    height: 30px;
+    width: 170px;
+    border-radius: 10px;
+
+}
