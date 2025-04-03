@@ -1,22 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <title>Register</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'CSS/login.css' %}">
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <h1>Registration page</h1>
-
-        <form action="" method="POST">{% csrf_token %}
-            <input type="text" name="username" placeholder="Enter username" required><br>
-            <input type="text" name="first_name" placeholder="Enter first name" required><br>
-            <input type="text" name="last_name" placeholder="Enter last name" required><br>
-            <input type="email" name="email" placeholder="Enter your email" required><br>
-            <input type="password" name="password" placeholder="Enter password" required><br>
-            <button type="submit">Register</button> 
-        </form>
+        <div class="logincon">
+            <form method="POST" class="form1" action="{% url 'login' %}">{% csrf_token %}
+                <h1 class="sin">Sign up</h1>
+                <input type="text" name="username" placeholder="Enter username" class="input1" required><br>
+                <input type="text" name="first_name" placeholder="Enter first name" class="input1" required><br>
+                <input type="text" name="last_name" placeholder="Enter last name" class="input1" required><br>
+                <input type="email" name="email" placeholder="Enter your email" class="input1" required><br>
+                <input type="password" name="password" placeholder="Enter password" class="input1" required><br>
+                <button type="submit" class="loginbtn">Register</button>
+                <p class="signup">Already have Account? <a href="{% url 'login' %}">Sign in</a></p> 
+            </form>
+            <b class="sen"><p class="text2">Sign up and give your pet the best care!</p><p  class="text3">Glad to see you! 👋 Join us today.</p><p class="text3">Fetch the best care for your pet – Register now!</p><p  class="text3">Let’s make great things happen together.</p>
+                <img src="{% static 'images/family.png' %}" alt="pets" class="family">
+            </b>
+            
+        </div>
         
     </body>
 </html>
