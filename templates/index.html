@@ -16,7 +16,7 @@
                 <div class="img"><img src="{% static 'images/logo.png' %}" alt="prop" class="logoimg"/></div>
                 <div class="menu">
                     <b><a class="menu-style {% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Home</a></b>
-                    <b><a class="menu-style">Services</a></b>
+                    <b><a class="menu-style" href="{% url 'services' %}">Services</a></b>
                     <b><a class="menu-style">Pet Shop</a></b>
                     <b><a class="menu-style">About Us</a></b>
                     <b><a class="menu-style">000-656583</a></b>

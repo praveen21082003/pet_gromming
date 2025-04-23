@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Services</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'CSS/service.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <script src="{% static 'js/script.js' %}"></script>
+    </head>
+    <body>
+        <header class="header">
+            <div class="navbar">
+                <div class="img"><img src="{% static 'images/logo.png' %}" alt="prop" class="logoimg"/></div>
+                <div class="menu">
+                    <b><a class="menu-style {% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Home</a></b>
+                    <b><a class="menu-style" href="{% url 'services' %}">Services</a></b>
+                    <b><a class="menu-style">Pet Shop</a></b>
+                    <b><a class="menu-style">About Us</a></b>
+                    <b><a class="menu-style">000-656583</a></b>
+                    <div>
+                        {% if user.is_authenticated %}
+                            <b><span class="username">Welcome..!😊, {{ user.first_name }}</span></b>
+                            <button class="button" onclick="window.location.href='{% url 'logout' %}';">Logout</button>
+                        {% else %}
+                            <button class="button" onclick="window.location.href='{% url 'login' %}';">Login</button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="title">
+                <div>
+                    <p class="title-text">Services</p>
+                </div>
+                <div >
+                    <img src="{% static 'images/menu copy.png' %}" class="imge"/>
+                </div>
+            </div>
+        </header>
+        <div class="foot" >
+            <h1 class="our-services">Our Services</h1>
+            <h2 class="speak">Services That Speak To Yours Pet's Happiness</h2>
+    
+            <div class="service">
+                <Main2 class="gromings" content1="🐾Basic Grooming Services:" content2="Bathing & Drying" content3="Brushing & De-shedding" content4="Nail Trimming" content5="Ear Cleaning" content6="Teeth Brushing"/>
+                <Main2 class="gromings" content1="🐶 Advanced Grooming Services:" content2="Haircuts & Styling" content3="De-matting & Detangling" content4=" Paw Pad & Nose Balm" content5=" Flea & Tick Treatment" content6="Sanitary Trim"/>
+                <Main2 class="gromings" content1="🌸 Luxury Spa Treatments:" content2="Aromatherapy Bath " content3=" Medicated Bath" content4=" Pet Massage" content5=" Bubble Bath & Massage " content6=" Herbal Paw Soak"/>
+            </div>
+            <div class="submain">
+                <div class="qouts">
+                    <h1>Caring for pets, one paw at a time,</h1>
+                    <h1>Because your pet deserves the best!</h1>
+                    <h3>Happy pets, happy hearts!</h3>
+                </div>
+                <div>
+                    <img src="cut.png" alt="cut" />
+                </div>
+                
+            </div>
+
+        </div>
+    </body>
+</html>

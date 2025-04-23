@@ -57,4 +57,11 @@ def get_user(request):
         return JsonResponse({"is_authenticated": True, "username": request.user.username})
     else:
         return JsonResponse({"is_authenticated": False})
+    
+
+
+
+
+def service(request):
+    return render(request,'service.html')
 
