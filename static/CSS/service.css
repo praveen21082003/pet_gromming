@@ -72,7 +72,7 @@ body{
     animation: floatAnimation 1.5s infinite alternate ease-in-out; 
      
 }
-.button{
+.logbutton{
     border: none;
     height: 30px;
     width: 60px;
@@ -103,12 +103,13 @@ body{
 
 .our-services{
     font-weight: bold;
-    font-family: Copperplate, Papyrus, fantasy ,serif;
+    text-align: center;
 }
 
 .speak{
     font-family: "Rockwell",Papyrus, fantasy;
     color: rgb(67, 55, 90);
+    text-align: center;
 
 }
 
@@ -129,3 +130,79 @@ body{
     background-color: aqua;
 }
 
+
+/* packages css */
+
+.buytext{
+    text-align: center;
+}
+
+.packages-grid{
+    display: flex;
+    margin-left: 200px;
+    text-align: center;
+}
+.package{
+    height: 500px;
+    width: 300px;
+    border: solid 1px;
+    border-radius: 30px;
+    border: none;
+    color: aliceblue;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    background-color:rgba(134, 89, 6, 0.89);
+    align-items: center;
+
+}
+.package2{
+    margin-top: 50px;
+    height: 400px;
+    width: 300px;
+    border: solid 1px ;
+    border-radius: 20px 0px 0px 20px;
+    border: none;
+    
+    box-shadow: 10px 10px 10px 8px rgba(0, 0, 0, 0.3);
+
+}
+.package3{
+    margin-top: 50px;
+    height: 400px;
+    width: 300px;
+    border: solid 1px ;
+    border-radius: 0px 20px 20px 0px;
+    border-left: none;
+    border: none;
+    box-shadow: 10px 10px 10px 4px rgba(0, 0, 0, 0.3);
+
+}
+.button{
+    height: 50px;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    background-color:rgba(134, 89, 6, 0.89);
+}
+.button2{
+    height: 50px;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+
+}
+
+
+.note{
+    height: 30px;
+    width: 90%;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+
+}

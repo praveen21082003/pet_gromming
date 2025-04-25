@@ -22,9 +22,9 @@
                     <div>
                         {% if user.is_authenticated %}
                             <b><span class="username">Welcome..!😊, {{ user.first_name }}</span></b>
-                            <button class="button" onclick="window.location.href='{% url 'logout' %}';">Logout</button>
+                            <button class="logbutton" onclick="window.location.href='{% url 'logout' %}';">Logout</button>
                         {% else %}
-                            <button class="button" onclick="window.location.href='{% url 'login' %}';">Login</button>
+                            <button class="logbutton" onclick="window.location.href='{% url 'login' %}';">Login</button>
                         {% endif %}
                     </div>
                 </div>
@@ -43,9 +43,156 @@
             <h2 class="speak">Services That Speak To Yours Pet's Happiness</h2>
     
             <div class="service">
-                <Main2 class="gromings" content1="🐾Basic Grooming Services:" content2="Bathing & Drying" content3="Brushing & De-shedding" content4="Nail Trimming" content5="Ear Cleaning" content6="Teeth Brushing"/>
-                <Main2 class="gromings" content1="🐶 Advanced Grooming Services:" content2="Haircuts & Styling" content3="De-matting & Detangling" content4=" Paw Pad & Nose Balm" content5=" Flea & Tick Treatment" content6="Sanitary Trim"/>
-                <Main2 class="gromings" content1="🌸 Luxury Spa Treatments:" content2="Aromatherapy Bath " content3=" Medicated Bath" content4=" Pet Massage" content5=" Bubble Bath & Massage " content6=" Herbal Paw Soak"/>
+                <div className="row">
+                    <h3 className="head">🐾Basic Grooming Services:</h3> 
+                    <p className="childs">✔ Bathing & Drying</p>
+                    <p className="childs">✔ Brushing & De-shedding</p>
+                    <p className="childs">✔ Nail Trimming</p>
+                    <p className="childs">✔ Ear Cleaning</p>
+                    <p className="childs">✔ Teeth Brushing</p>
+                </div>
+                <div className="row">
+                    <h3 className="head">🐶 Advanced Grooming Services:</h3>
+                    
+                    <p className="childs">✔ Haircuts & Styling</p>
+                    <p className="childs">✔ De-matting & Detangling</p>
+                    <p className="childs">✔ Paw Pad & Nose Balm</p>
+                    <p className="childs">✔ Flea & Tick Treatment</p>
+                    <p className="childs">✔ Sanitary Trim</p>
+                </div>
+                <div className="row">
+                    <h3 className="head"> 🌸 Luxury Spa Treatments:</h3>
+                    <p className="childs">✔ Aromatherapy Bath</p>
+                    <p className="childs">✔ Medicated Bath</p>
+                    <p className="childs">✔ Pet Massage</p>
+                    <p className="childs">✔ Bubble Bath & Massage </p>
+                    <p className="childs">✔ Herbal Paw Soak</p>
+                </div>
+            </div>
+            <div>
+                <h1 class="buytext">Special Packages</h1>
+                <p class="buytext">🎁 Treat your furry friend to our exclusive special packages,</p>
+                <p class="buytext">packed with premium grooming and pampering services for a tail-wagging experience! 🐾✨</p>
+                <div class="packages-grid">
+                    <div class="package2">
+                        <h2>Friendly Pack</h2>
+                        <h2>299Rs./-</h2>
+                        <p>6 Months services</p>
+                        <p>Pet Shower</p>
+                        <p>Intensive Checkup</p>
+                        <p>Grooming</p>
+                        <p>Hair & Nail Cut</p>
+                        <button class="button">Buy now</button>
+                    </div>
+                    <div class="package">
+                        <h2>Exclusive Package</h2>
+                        <h2>499Rs./-2X care</h2>
+                        <p>6 Months services</p>
+                        <p>Pet Shower</p>
+                        <p>Intensive Checkup</p>
+                        <p>Free Consultation</p>
+                        <p>Grooming</p>
+                        <p>Hair & Nail Cut</p>
+                        <p>Fresh Snack</p>
+                        <p>Pet park & games</p>
+                        <button class="button2">Buy now</button>
+                    </div>
+                    <div class="package3">
+                        <h2>Family Pack</h2>
+                        <h2>399Rs./-</h2>
+                        <p>6 Months services</p>
+                        <p>Pet Shower</p>
+                        <p>Intensive Checkup</p>
+                        <p>Free Consultation</p>
+                        <p>Grooming</p>
+                        <p>Hair & Nail Cut</p>
+                        <button class="button">Buy now</button>
+                    </div>
+                </div>
+                <div class="note"><p><b>Note:</b>Want to customize your package? Swipe down to explore and tailor it to your pet's unique needs! 🐶🐱✨</p>
+                </div>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <h1 class="note">Book Your Appointment</h1>
+                    <p class="note">Fill out the form below to schedule your pet's grooming session with us.</p>
+                    <p class="note">We can't wait to pamper your furry friend!</p>
+                    <h4>Customer Details</h4>
+                    <label for="fullname">Full Name</label>
+                    <input type="text" name="fullname" value="{{ form.fullname.value }}" />
+                  
+                    <label for="phonenumber">Phone Number</label>
+                    <input type="text" name="phonenumber" value="{{ form.phonenumber.value }}" />
+                  
+                    <label for="email">Email</label>
+                    <input type="email" name="email" value="{{ form.email.value }}" />
+
+                    <label for="address">Address</label>
+                    <input type="text" name="address" value="{{ form.address.value }}" />
+
+                    <h4>Pet Details</h4>
+                  
+                    <label for="pet_name">Pet Name</label>
+                    <input type="text" name="pet_name" value="{{ form.pet_name.value }}" />
+
+                    <label for="pet_type">Pet Type</label>
+                    <select name="pet_type" id="pettype">
+                        <option value="Dog">Dog</option>
+                        <option value="Cat">Cat</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label for="pet_breed">Pet Breed</label>
+                    <input type="text" name="pet_breed" value="{{ form.pet_breed.value }}" />
+
+                    <label for="pet_age">Pet Age</label>
+                    <input type="text" name="pet_age" value="{{ form.pet_age.value }}" />
+
+                    <label>Pet Gender</label>
+                    <input type="radio" name="pet_gender" value="male"> Male
+                    <input type="radio" name="pet_gender" value="female"> Female
+
+                    <label for="pet_weight">Pet Weight</label>
+                    <input type="text" name="pet_weight" value="{{ form.pet_weight.value }}" />
+
+                    <lable for="pet_height">Pet Height</lable>
+                    <input type="text" name="pet_height" value="{{ form.pet_height.value }}" />
+
+                    <lable for="pet_medical_condition">Pet Medical Condition</lable>
+                    <input type="text" name="pet_medical_condition" value="{{ form.pet_medical_condition.value }}" />
+
+                    <label for="pet_vaccination">Pet Vaccination</label>
+                    <input type="text" name="pet_vaccination" value="{{ form.pet_vaccination.value }}" />
+
+                    <label for="pet_image">Pet Image</label>
+                    <input type="file" name="pet_image" accept="image/*" value="{{ form.pet_image.value }}" />
+
+
+                    <h4>Grooming Preferences</h4>
+
+                    <label for="package_type">Services Required</label>
+                    <select name="petservices" id="petservices">
+                        <option value="Basic Grooming">Basic Grooming</option>
+                        <option value="Advanced Grooming">Advanced Grooming</option>
+                        <option value="Luxury Spa Treatments">Luxury Spa Treatments</option>
+                        <option value="Custom Package">Custom Package</option>
+                    </select>
+
+                    <label for="booking_date">Preferred Appointment Date</label>
+                    <input type="date" name="booking_date" value="{{ form.booking_date.value }}" />
+
+                    <label for="booking_time">Preferred Appointment Time</label>
+                    <input type="time" name="booking_time" value="{{ form.booking_time.value }}" />
+
+                    <label for="services">Select Services</label>
+                    {% for service in form.services %}
+                      <label>
+                        <input type="checkbox" name="services" value="{{ service.id }}"> {{ service }}
+                      </label>
+                    {% endfor %}
+                    
+                    <button type="submit">Submit</button>
+                  </form>                  
             </div>
             <div class="submain">
                 <div class="qouts">
@@ -54,7 +201,7 @@
                     <h3>Happy pets, happy hearts!</h3>
                 </div>
                 <div>
-                    <img src="cut.png" alt="cut" />
+                    <img src="{% static 'images/cut.png'%}" alt="cut" />
                 </div>
                 
             </div>

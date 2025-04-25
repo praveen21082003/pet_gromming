@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.http import JsonResponse
+from .forms import CustomizePackageForm
+from .models import CustomizePackage  # just in case it's not imported
 # Create your views here.
 
 def home(request):
@@ -62,6 +64,19 @@ def get_user(request):
 
 
 
+
 def service(request):
-    return render(request,'service.html')
+    if request.method == 'POST':
+        form = CustomizePackageForm(request.POST, request.FILES) # Added request.FILES to handle file uploads
+        if form.is_valid():
+            booking = form.save(commit=False)
+            booking.user = request.user  # 🔗 connect booking to logged-in user
+            booking.save()
+            form.save_m2m()  # for services ManyToMany field
+            return redirect('services') 
+    else:
+        form = CustomizePackageForm()
+    
+    return render(request, 'service.html', {'form': form})
+
 

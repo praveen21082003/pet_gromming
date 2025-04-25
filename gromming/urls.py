@@ -1,5 +1,7 @@
 from django.urls import path
-from .views import home,register,login_user,logout_user,get_user,service
+from .views import *
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -11,4 +13,6 @@ urlpatterns = [
     path("get_user/", get_user, name="get_user"),
 ]
    
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
