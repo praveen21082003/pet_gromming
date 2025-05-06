@@ -38,6 +38,10 @@ body{
     font-size: larger;
 }
 
+#hover{
+    color: rgb(219, 104, 10);
+}
+
 .menu-style:hover {
     color: rgb(219, 104, 10); /* Changes color when hovered */
 }
@@ -88,6 +92,8 @@ body{
     border-radius: 10px;
     font-size: 20px;
 }
+
+
 
 
 
@@ -205,4 +211,81 @@ body{
     font-family: 'Courier New', Courier, monospace;
     font-style: italic;
 
+}
+
+
+/* booking form */
+.bookingcontainer {
+    width: 100%;
+    padding: 40px;
+    background-color: #f9f9f9;
+}
+
+.booking-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.booking-image {
+    flex: 0 0 30%;
+}
+
+.booking-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.booking-form-wrapper {
+    flex: 0 0 65%;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.bookinghedding {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.bookingform label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #555;
+}
+
+.bookingform .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.bookingform .btn-primary {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #007bff;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.bookingform .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.bookingform h4 {
+    margin-top: 30px;
+    color: #333;
 }

@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'CSS/mybooking.css' %}">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <header class="header">
+            <div class="navbar">
+                <div class="img"><img src="{% static 'images/logo.png' %}" alt="prop" class="logoimg"/></div>
+                <div class="menu">
+                    <b><a class="menu-style {% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Home</a></b>
+                    <b><a class="menu-style" href="{% url 'services' %}">Services</a></b>
+                    <b><a class="menu-style">Pet Shop</a></b>
+                    <b><a class="menu-style" id="hover" href="{% url 'my_bookings' %}">My Bookings</a></b>
+                    <b><a class="menu-style">About Us</a></b>
+                    <div>
+                        {% if user.is_authenticated %}
+                            <b><span class="username">Welcome..!😊, {{ user.first_name }}</span></b>
+                            <button class="logbutton" onclick="window.location.href='{% url 'logout' %}';">Logout</button>
+                        {% else %}
+                            <button class="button" onclick="window.location.href='{% url 'login' %}';">Login</button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="title">
+                <div>
+                    <p class="title-text">My Bookings</p>
+                </div>
+                <div >
+                    <img src="{% static 'images/home.png' %}" class="imge"/>
+                </div>
+            </div>
+        </header>
+        <div class="tablediv">
+        <table border="1" class="table">
+            <tr>
+                <th>Full Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Pet Name</th>
+                <th>Service</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Booked Services</th>
+                <th>Status</th>
+                
+            </tr>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.fullname }}</td>
+                <td>{{ booking.phonenumber }}</td>
+                <td>{{ booking.email }}</td>
+                <td>{{ booking.address }}</td>
+                <td>{{ booking.pet_name }}</td>
+                <td>{{ booking.package_type }}</td>
+                <td>{{ booking.booking_date }}</td>
+                <td>{{ booking.booking_time }}</td>
+                
+                <td>
+                    {% for service in booking.services.all %}
+                        {{ service.name }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </td>
+                <td>{{booking.status}}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="9">No bookings found.</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        </div>
+
+    </body>
+</html>

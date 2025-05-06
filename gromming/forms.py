@@ -15,6 +15,7 @@ class CustomizePackageForm(forms.ModelForm):
             'phonenumber',
             'email',
             'address',
+            # pet details
             'pet_name',
             'pet_type',
             'pet_breed',
@@ -30,3 +31,13 @@ class CustomizePackageForm(forms.ModelForm):
             'services',
             'pet_image',
         ]
+        widgets = {
+            'booking_date': forms.DateInput(attrs={
+                'type': 'date',
+                'class': 'form-control', 
+            }),
+            'booking_time': forms.TimeInput(attrs={
+                'type': 'time',
+                'class': 'form-control',
+            }),
+        }

@@ -1,6 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    phone_number = models.CharField(max_length=15)
+    address = models.TextField()
+
+    def __str__(self):
+        return self.user.username
+
+
 # Create your models here.
 class ServiceType(models.Model):
     name = models.CharField(max_length=100)
@@ -37,7 +46,7 @@ class CustomizePackage(models.Model):
     ]
     pet_gender = models.CharField(max_length=10, choices=GENDER_CHOICES)
     pet_weight = models.IntegerField()
-    pet_height = models.IntegerField()
+    pet_height = models.FloatField()
     pet_medical_condition = models.TextField()
     pet_vaccination_status = models.TextField()
     pet_image = models.ImageField(upload_to='pet_images/', null=True, blank=True)
@@ -55,12 +64,32 @@ class CustomizePackage(models.Model):
 
     # ✅ Multiple services selection via checkboxes
     services = models.ManyToManyField(ServiceType)
-   
+    STATUS_CHOICES = [
+        ('pending', 'Pending'),
+        ('confirmed', 'Confirmed'),
+        ('completed', 'Completed'),
+        ('cancelled', 'Cancelled'),
+    ]
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='updated soon') 
 
 
 
     def __str__(self):
         return self.fullname + " - " + self.pet_name
+    
+
+
+
+
+class Booking(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    service_name = models.CharField(max_length=100)
+    booking_date = models.DateField()
+    status = models.CharField(max_length=20)
+
+    def __str__(self):
+        return f"{self.user.username} - {self.service_name}"
+
   
     
 

@@ -37,6 +37,9 @@ body{
     margin-left: 50px;
     font-size: larger;
 }
+#hover{
+    color: rgb(219, 104, 10);
+}
 
 .menu-style:hover {
     color: rgb(219, 104, 10); /* Changes color when hovered */

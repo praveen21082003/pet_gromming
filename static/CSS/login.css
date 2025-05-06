@@ -11,7 +11,7 @@ body{
 
 
 .logincon{
-    height: 500px;
+    height: 550px;
     width: 900px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(128, 0, 255, 0.8),
@@ -72,7 +72,7 @@ body{
     border: none;
     background-color: transparent;
     border-bottom: solid 2px #ecbaba;
-    margin-top: 5px;
+    margin-top: 0px;
     height: 30px;
     width: 300px;
     font-size: 15px;
@@ -115,7 +115,7 @@ body{
 }
 .form1{
     margin-left: 40px;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-right: 40px;
     align-items: center;
     text-align: center;
@@ -128,7 +128,7 @@ body{
     height: 30px;
     width: 200px;
     border-radius: 50px;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 
@@ -138,5 +138,5 @@ body{
     width: 450px;
 }
 .signup{
-    margin-top: 20px;
+    margin-top: 16px;
 }
