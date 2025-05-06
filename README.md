@@ -24,23 +24,28 @@ This is a Django-based web application that allows pet owners to book various se
    cd pet-grooming-project
    
 2. Create and activate a virtual environment:
+    ```bash
    python -m venv venv
    venv\Scripts\activate  # On Windows
    
 3. Install dependencies:
+    ```bash
    pip install -r requirements.txt
    
 4. Apply migrations:
+   ```bash
    python manage.py makemigrations
    python manage.py migrate
-   
-5.Create a superuser (for admin access):
+5. Create a superuser (for admin access):
+   ```bash
    python manage.py createsuperuser
 
 6. Run the server:
+   ```bash
    python manage.py runserver
 
 7. Open in browser:
+   ```bash
    http://127.0.0.1:8000/
 
 🧪 Modules (Highlights)
